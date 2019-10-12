@@ -93,13 +93,6 @@ func fnMain(ctx context.Context, in io.Reader, out io.Writer) {
 	loglib.InitSugar()
 	defer loglib.Sugar.Sync()
 
-	// test
-	fmt.Println("test print")
-	loglib.Sugar.Infof("test info")
-	err := fmt.Errorf("test error")
-	loglib.Sugar.Error(err)
-	fmt.Println("test print")
-
 	imageConst, err := getImageConst(input.Data.ResourceName)
 	if err != nil {
 		loglib.Sugar.Error(err)

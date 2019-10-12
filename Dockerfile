@@ -26,6 +26,9 @@ RUN adduser --uid 1000 go-oracledb && \
 # go binary
 COPY ./bin/serless_metadeta-to-oracledb /home/go-oracledb/serless_metadeta-to-oracledb
 
+# tnsnames.ora
+COPY tnsnames.ora /opt/oracle/instantclient_19_3/network/admin/tnsnames.ora
+
 # default user
 USER 1000:1000
 
