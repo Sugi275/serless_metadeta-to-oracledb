@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/Sugi275/serless_metadeta-to-oracledb/loglib"
+	fdk "github.com/fnproject/fdk-go"
 	"github.com/google/uuid"
 	_ "github.com/mattn/go-oci8"
-	// fdk "github.com/fnproject/fdk-go"
 )
 
 const (
@@ -75,12 +75,12 @@ type Image struct {
 }
 
 func main() {
-	// fdk.Handle(fdk.HandlerFunc(fnMain))
+	fdk.Handle(fdk.HandlerFunc(fnMain))
 
 	// ------- local development ---------
-	reader := os.Stdin
-	writer := os.Stdout
-	fnMain(context.TODO(), reader, writer)
+	// reader := os.Stdin
+	// writer := os.Stdout
+	// fnMain(context.TODO(), reader, writer)
 }
 
 func fnMain(ctx context.Context, in io.Reader, out io.Writer) {
