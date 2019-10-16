@@ -93,6 +93,11 @@ func fnMain(ctx context.Context, in io.Reader, out io.Writer) {
 	loglib.InitSugar()
 	defer loglib.Sugar.Sync()
 
+	if input.Data.ResourceName == "" {
+		loglib.Sugar.Error("InputにResourceNameがありません")
+		return
+	}
+
 	imageConst, err := getImageConst(input.Data.ResourceName)
 	if err != nil {
 		loglib.Sugar.Error(err)
